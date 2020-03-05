@@ -1,0 +1,78 @@
+QUESTION 1
+public class StringExercise{
+  public static void main (String[]args){
+  
+String college = new String ("College of Arts and Sciences ");
+String town = new String ("UUM Sintok");// part (a)
+int stringLength;
+String change1, change2, change3;
+stringLength = (college.length());// part (b)
+System.out.println (college + " contains " + stringLength + " characters.");
+change1 = college.toUpperCase(); // part (c)
+System.out.println ("The string is all in upper case: " + change1);
+change2 = change1.replace('O','.'); // part (d)
+System.out.println ("All capital O's are replaced with the asterisk character: " + change2);
+change3 = college.concat(town); // part (e)
+System.out.println ("The final string is " + change3);
+}
+}
+
+
+QUESTION 2
+import java.util.*;
+  public class StringExercise1{
+  public static void main (String[]args){
+  
+        Scanner input= new Scanner(System.in);
+        System.out.print("Enter a colour: ");
+        
+        String colour = input.nextLine();
+        System.out.print("Enter a food: ");
+       
+        String food = input.nextLine();
+        System.out.print("Enter a animal: ");
+        
+        String animal = input.nextLine();
+        System.out.print("Enter a friend: ");
+        
+        String friend = input.nextLine();
+        System.out.println("I had a dream that " + friend + " ate a "+ colour + " "+ animal+" and said it tasted like "+ food +"!");   
+        }
+        }
+        
+  QUESTION 3
+  import java.util.*;
+  public class StringExercise2{
+  public static void main (String[]args){
+  
+        Scanner input= new Scanner(System.in);
+        System.out.print("Enter day, month and year(in format dd/mm/yy)\t:");
+        String tarikh = input.nextLine();
+     
+        tarikh = tarikh.replace("/",".");
+        System.out.println(tarikh);
+   }
+   }
+   
+  QUESTION 4
+  import java.util.*;
+  public class StringExercise3{
+  public static void main (String[]args){
+  
+  Scanner input= new Scanner(System.in);
+  String num = "";
+      int j = 0;
+        
+      System.out.printf("Enter 4 digit number:");
+      String digit = input.nextLine();
+            
+      for(int i = 0 ; i<4 ; i++){ //condition
+            
+      System.out.println(digit.charAt(i));
+      num = String.valueOf(digit.charAt(i));
+     
+      j += Integer.parseInt(num);
+      }  
+      System.out.println(j);
+    }
+    }
