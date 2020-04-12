@@ -1,0 +1,104 @@
+QUESTION 1
+String objA = "first object";
+String objB = new String("new object");
+
+
+QUESTION 2
+import java.util.*;
+public class Question2 {
+  
+ public static void main(String[]args) {
+ 
+String phr = new String("Big,blue sky");
+        System.out.println(phr.substring(phr.indexOf(","),7));    
+ }
+}
+
+
+QUESTION 3
+import java.util.*;
+public class Question3 {
+  
+ public static void main(String[]args) {
+ 
+   Random rd=new Random()
+   System.out.println(rd.nextInt(41)+10);
+ }  
+}
+
+//the output is random pick between 0 to 40 and add 10
+
+
+QUESTION 4
+import java.util.*;
+public class Question4 {
+  
+ public static void main(String[]args) {
+ 
+     Random num = new Random();
+     int num1 = num.nextInt(100);
+     System.out.println("Number 1 : "+num1);
+     int num2 = num.nextInt(100);
+     System.out.println("Number 2 : "+num2);
+     int largestNum = Math.max(num1,num2);
+     System.out.println("Largest number : "+ largestNum);
+     }
+}
+
+
+QUESTION 5
+import java.util.*;
+public class Question5 {
+  
+ public static void main(String[]args) {
+ String test = "abc";
+   test = test + test;
+   System.out.println(test); 
+   
+ Random random = new Random();
+   double d = Math.round(2.5 + random.nextInt(1));
+   System.out.println("The value is "+d);
+  
+  }
+}
+
+
+QUESTION 6
+import java.util.*;
+public class Question6 {
+  
+ public static void main(String[]args) {
+ 
+ Scanner input = new Scanner(System.in);
+    System.out.print("Enter first number: ");
+    int x = input.nextInt();
+    System.out.print("Enter second number: ");
+    int y = input.nextInt();
+    System.out.println("Multiplication of first number and second number is " + Math.multiplyExact(x,y));
+ }
+}
+
+
+QUESTION 7
+import java.util.*;
+public class Question7 {
+  
+ public static void main(String[]args) {
+ 
+ String text1 = "School of Computing";
+ String text2 = "College of Arts and Sciences";
+ String text3 = "UUM Sintok";
+ 
+ int length1 = text1.length();
+ int length2 = text2.length();
+ int length3 = text3.length();
+ 
+  System.out.println("length of "+text1+" is "+length1);
+  System.out.println("length of "+text2+" is "+length2);
+  System.out.println("length of "+text3+" is "+length3+"\n");       
+  System.out.println("Total length is " + (text1.length()+text2.length()+text3.length()));
+        
+  System.out.println(text2.substring(0,20) + text1.substring(10,19)); 
+  }
+}
+
