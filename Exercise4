@@ -1,0 +1,174 @@
+QUESTION 1
+class QuestionOne {
+	private int count;
+	
+	public void QuestionOne(){
+		count = 1;
+	}
+	public void increment() {
+		count = count + 1;
+	}
+	public int getCount() {
+		return count;
+	}
+}
+public class Q1Main {
+	public static void main (String []arg) {
+		QuestionOne q1;
+		q1 = new QuestionOne();
+		q1.QuestionOne();
+		q1.increment();
+		q1.increment();
+		System.out.println(q1.getCount());
+	}
+}
+//output is 3
+
+
+QUESTION 2
+import java.util.Scanner;
+class TestStaff {
+	static Scanner console = new Scanner(System.in);	
+   public static void main(String arg[]){
+
+	System.out.print("Enter staff name: ");
+	String name = console.nextLine();
+
+   System.out.print("Enter staff ID: ");
+   int staffID = console.nextInt();
+   
+   System.out.print("Enter working days: ");
+   int workingDays = console.nextInt();
+   
+   double salary = workingDays * 35.0;
+   
+   System.out.print("\nName: "+ name);
+   System.out.print("\nID: "+ staffID);
+   System.out.print("\nWorking days: "+ workingDays);
+   System.out.printf("\nSalary: %.2f", salary);
+   
+   }	
+}
+
+
+QUESTION 3
+import java.util.Scanner;
+class TestMyFCStaff {
+    public static void main(String arg[]){
+        Scanner input = new Scanner(System.in);
+        String name,staffID;
+        int workingHours,totalSales= 0;
+        double totalSalary,commission;
+
+        System.out.print("Please enter staff name: ");
+        name = input.nextLine();
+        System.out.print("Please enter staff ID: ");
+        staffID = input.nextLine();
+        System.out.print("Enter working hours:");
+        workingHours = input.nextInt();
+        System.out.print("Please enter total sales:");
+        totalSales = input.nextInt();
+
+        MyFCStaff m = new MyFCStaff(name,staffID,workingHours,totalSales);
+        m.calculateCommission();
+        m.calculateSalary();
+        System.out.println("--------------------------------------------------");
+        System.out.println("Staff name: "+name);
+        System.out.println("Staff ID: "+staffID);
+        System.out.println("Total working hours: "+workingHours);
+        System.out.println("Total sales: RM"+totalSales);
+        System.out.printf("Total salary: RM");
+        m.displaySalary();
+    }
+}
+
+class MyFCStaff {
+    private String name, staffID;
+    private double salary,commission,totalSales;
+    private int workingHours;
+    public  MyFCStaff(String name, String staffID, int workingHours,double totalSales){
+        this.name = name;
+        this.staffID = staffID;
+        this.workingHours = workingHours;
+        this.totalSales = totalSales;
+    }
+
+    public void calculateCommission(){
+        if(totalSales>=150 && totalSales<=300){
+          commission  = totalSales*5/100;
+        }else if(totalSales>=301 && totalSales<=500){
+          commission = totalSales*10/100;
+        }else if(totalSales >500){
+          commission = totalSales*15/100;
+        }else{
+          commission = 0;
+        }
+    }
+    public double calculateSalary(){
+        return salary = workingHours *8  + commission;
+    }
+
+     public void displaySalary(){
+        System.out.println(calculateSalary());
+    }
+}
+
+
+QUESTION 4
+mport java.util.*;
+public class TestMyFCStaff {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter staff name: ");
+        String name = in.nextLine();
+        System.out.print("Enter staff ID: ");
+        String staffID = in.nextLine();
+        System.out.print("Enter total hours work: ");
+        int hour = in.nextInt();
+        System.out.print("Enter total sales: ");
+        double sales = in.nextDouble();
+        
+        MyFCStaff staff = new MyFCStaff();
+        System.out.println("--------------------------------------------------");
+        staff.MyFCStaff(name, staffID, hour, sales);
+        staff.calculateCommission();
+        staff.calculateSalary();
+        System.out.println(staff.toString());
+    }
+}
+class MyFCStaff {
+         private int hour;
+         private double sales,salary,commission;
+         private String name, id, display;
+         
+     public void MyFCStaff(String staffName, String staffID, int wHours, double totalSales){
+         this.name = staffName;
+         this.id = staffID;
+         this.hour = wHours;
+         this.sales = totalSales;
+     } 
+    
+     public void calculateCommission(){
+         if(150 <= sales && sales <= 300){
+            commission = 0.05;
+         }
+         else if(301.00 <= sales && sales <= 500.00){
+                 commission = 0.10;
+         }
+         else if(sales >= 500.00){
+                 commission = 0.15;
+         }
+     }
+     public void calculateSalary(){
+         salary = (commission*sales) + (hour*8);
+     }
+     public String toString(){
+         String sName, sID, wHour, tSales, tSalary;
+         sName = String.format("Staff Name: " + name);
+         sID = String.format("\nStaff ID: "+ id);
+         wHour = String.format("\nHours Work: " + hour);
+         tSales = String.format("\nTotal Sales: RM%.2f" , sales);
+         tSalary = String.format("\nTotal Salary: RM%.2f" , salary);
+         return sName + sID + wHour + tSales + tSalary;
+     }
+}
